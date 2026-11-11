@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multilingual Voice & Text Translator</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <!-- New Top Title Bar -->
+            <div class="header-title">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <h2>AI Translator</h2>
+                </div>
+                <div class="header-actions">
+                    <button id="newChatBtn" class="header-btn" title="New Chat">➕</button>
+                    <button id="historyBtn" class="header-btn" title="History">📜</button>
+                </div>
+            </div>
+
+            <!-- Language Controls -->
+            <div class="header-top">
+                <select id="sourceLang"></select>
+                <button id="swapLangBtn" title="Swap languages">⇄</button>
+                <select id="targetLang"></select>
+            </div>
+        </header>
+
+        <!-- Main Layout Wrapper -->
+        <div class="main-layout">
+            <!-- Sidebar (Hidden by default) -->
+            <div id="sidebar" class="sidebar hidden">
+                <div class="sidebar-header">
+                    <h3>Saved Chats</h3>
+                    <button id="closeSidebarBtn">✖</button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <!-- History items will go here -->
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area">
+                <div id="chatWindow" class="chat-window"></div>
+                
+                <div class="input-area">
+                    <textarea id="textInput" placeholder="Type a message or use the mic..."></textarea>
+                    
+                    <button id="micBtn" title="Start Speaking">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                            <line x1="12" y1="19" x2="12" y2="23"></line>
+                            <line x1="8" y1="23" x2="16" y2="23"></line>
+                        </svg>
+                    </button>
+                    <button id="sendBtn" title="Send Message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/speech.js"></script>
+    <script src="js/translator.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
